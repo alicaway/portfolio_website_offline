@@ -39,3 +39,28 @@ section {
     width: 80%;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+.experience-item {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.experience-item h3 {
+    color: #333;
+}
+
+.experience-item p {
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
