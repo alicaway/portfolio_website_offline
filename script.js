@@ -54,33 +54,43 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// Add animation for skill items when they come into view
+// Add animation for footer elements when they come into view
 document.addEventListener('DOMContentLoaded', function() {
-    const skillItems = document.querySelectorAll('.skill-category li');
+    const footerSections = document.querySelectorAll('.footer-section');
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateX(0)';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
     
-    skillItems.forEach(item => {
-        item.style.opacity = 0;
-        item.style.transform = 'translateX(-20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(item);
+    footerSections.forEach(section => {
+        section.style.opacity = 0;
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
     });
 });
 
-// Add basic form validation for contact section
+// Add form submission handling for contact form (if needed)
 document.addEventListener('DOMContentLoaded', function() {
-    const contactSection = document.getElementById('contact');
+    const contactForm = document.querySelector('#contact form');
     
-    if (contactSection) {
-        // This would be useful if you had a contact form
-        console.log('Contact section loaded');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Form submission logic would go here
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
     }
 });
